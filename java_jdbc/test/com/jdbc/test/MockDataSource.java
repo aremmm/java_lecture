@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import com.jdbc.datasource.DataSource;
 
 public class MockDataSource extends DataSource{
+	//231221(thu)
+	
 	private static MockDataSource instance = new MockDataSource();
 	public static MockDataSource getInstance() {
 		return instance;

@@ -17,6 +17,7 @@ import com.jdbc.dto.주문VO;
 
 
 public class TestDAO {
+	//231221(thu)
 	
 	private DataSource dataSource;
 	private 고객DAO 고객dao = new 고객DAO();
@@ -34,19 +35,19 @@ public class TestDAO {
 	
 	@Test
 	public void test고객리스트()throws Exception {
-		List<고객VO> 고객리스트 = 고객dao.selectList();
-		Assert.assertEquals(9, 고객리스트.size());
+		List<고객VO> 고객리스트 = 고객dao.selectList(); //selectList()메서드로 고객VO객체의 리스트를 가져온다.
+		Assert.assertEquals(9, 고객리스트.size()); //고객리스트의 크기가 9인지 Assert.assertEquals를 이용해 검사함.
 	}
 	
 	@Test
-	public void test제품리스트() throws Exception {
+	public void test제품리스트() throws Exception { //위와 동일.
 		List<제품VO> 제품리스트 = 제품dao.selectList();
 		Assert.assertEquals(7, 제품리스트.size());
 	}
 	
 	@Test
 	public void test주문리스트() throws Exception {
-		List<주문VO> 주문리스트 = 주문dao.selectList();
+		List<주문VO> 주문리스트 = 주문dao.selectList(); //위와 동일.
 		Assert.assertEquals(10, 주문리스트.size());
 	}
 }

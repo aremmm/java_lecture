@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DataSource {
+	//231221(thu)
+	
 	private static DataSource instance = new DataSource();;
 	//private DataSource() {}
 	public static DataSource getInstance() {

@@ -11,6 +11,8 @@ import com.jdbc.datasource.DataSource;
 import com.jdbc.dto.제품VO;
 
 public class 제품DAO implements DAO<제품VO>{
+	//implements DAO<제품VO>는 제품DAO에 제품VO내용을 넣는다는 뜻.
+		//231221(thu)
 
 	private DataSource dataSource = DataSource.getInstance();
 	public void setDataSource(DataSource dataSource) {
@@ -77,7 +79,7 @@ public class 제품DAO implements DAO<제품VO>{
 		
 		String sql = "update 제품 set "
 					+ "제품명=?,재고량=?,단가=?,제조업체=? "
-					+ "where 제품번호=?";
+					+ "where 제품번호=?";//sql에서 제품번호는 퍼블릭을 줬기 때문에 변경 불가능으로 where로 따로 빼주는 것.
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, e.get제품명());
 		pstmt.setInt(2, e.get재고량());

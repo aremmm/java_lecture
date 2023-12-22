@@ -1,11 +1,15 @@
 package com.jdbc.dto;
 
 public class 제품VO extends VO {
+	// 231220(wed)
+	
 	private String 제품번호;
 	private String 제품명;
 	private int 재고량;
 	private int 단가;
 	private String 제조업체;
+	
+	
 	public String get제품번호() {
 		return 제품번호;
 	}

@@ -12,6 +12,8 @@ import com.jdbc.datasource.DataSource;
 import com.jdbc.dto.주문VO;
 
 public class 주문DAO implements DAO<주문VO>{
+	//implements DAO<주문VO>는 주문DAO에 주문VO내용을 넣는다는 뜻.
+		//231221(thu)
 
 	private DataSource dataSource = DataSource.getInstance();
 	public void setDataSource(DataSource dataSource) {
@@ -79,7 +81,7 @@ public class 주문DAO implements DAO<주문VO>{
 		
 		String sql = "update 주문 set "
 					+ "주문고객=?,주문제품=?,수량=?,배송지=?,주문일자=? "
-				     +"where 주문번호=?";
+				     +"where 주문번호=?"; //sql에서 주문번호는 퍼블릭을 줬기 때문에 변경 불가능으로 where로 따로 빼주는 것.
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, e.get주문고객());
 		pstmt.setString(2,e.get주문제품());

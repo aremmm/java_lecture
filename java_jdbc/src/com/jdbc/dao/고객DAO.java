@@ -10,7 +10,9 @@ import java.util.List;
 import com.jdbc.datasource.DataSource;
 import com.jdbc.dto.고객VO;
 
-public class 고객DAO implements DAO<고객VO>{
+public class 고객DAO implements DAO<고객VO>{ 
+	//implements DAO<고객VO>는 고객DAO에 고객VO내용을 넣는다는 뜻.
+	//231221(thu)
 
 	private DataSource dataSource = DataSource.getInstance();
 	public void setDataSource(DataSource dataSource) {
@@ -64,6 +66,7 @@ public class 고객DAO implements DAO<고객VO>{
 		String sql = "insert into 고객(고객아이디,고객이름,나이,등급,직업,적립금) "
 				+ "values(?,?,?,?,?,?)";
 		
+		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, e.get고객아이디());
 		pstmt.setString(2, e.get고객이름());
@@ -85,7 +88,7 @@ public class 고객DAO implements DAO<고객VO>{
 		Connection conn = dataSource.getConncetion();
 		String sql = "update 고객 set "
 				+ "고객이름=?,나이=?,등급=?,직업=?,적립금=? "
-				+ "where 고객아이디=?";
+				+ "where 고객아이디=?"; //sql에서 고객아이디는 퍼블릭을 줬기 때문에 변경 불가능으로 where로 따로 빼주는 것.
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, e.get고객이름());

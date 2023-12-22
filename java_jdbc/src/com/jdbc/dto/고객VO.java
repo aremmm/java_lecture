@@ -1,12 +1,16 @@
 package com.jdbc.dto;
 
 public class 고객VO extends VO{
+	// 231220(wed)
+	
 	private String 고객아이디;
 	private String 고객이름;
 	private int 나이;
 	private String 등급;
 	private String 직업;
 	private int 적립금;
+	
+	
 	public String get고객아이디() {
 		return 고객아이디;
 	}
