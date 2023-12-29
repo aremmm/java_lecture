@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- action은 현재 디렉토리(hello.html)만 가르키고, method는 get -->
+	<form action="hello.html" method="get" > <!-- method는 get -->
+		who: <input type="text" name="who" /><br/>
+		message: <textarea cols="100" name="message" ></textarea>
+		<br/>
+		<input type="submit" value="전송" />
+	</form>
+	<hr/>
+	<form action="hello.html" method="post" > <!-- method는 post -->
+		who: <input type="text" name="who" /><br/>
+		message: <textarea cols="100" name="message" ></textarea>
+		<br/>
+		<input type="submit" value="전송" />
+	</form>
+	<hr/>
+	<form action="hello.html" method="delete" > <!-- method는 delete -->
+		who: <input type="text" name="who" /><br/>
+		message: <textarea cols="100" name="message" ></textarea>
+		<br/>
+		<input type="submit" value="전송" />
+	</form>
+	
+</body>
+</html>

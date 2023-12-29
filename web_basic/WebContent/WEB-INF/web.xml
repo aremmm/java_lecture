@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 231227(wed) -->
+
+<web-app>
+	<servlet>
+		<servlet-name>hello</servlet-name>
+		<servlet-class>com.jsp.servlet.HelloServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/hello.html</url-pattern>
+	</servlet-mapping> <!-- 해당 servlet을 주고 그에 대한 servlet 네임명을 줘야. -->
+
+	<servlet>
+		<servlet-name>lifeCycle</servlet-name>
+		<servlet-class>com.jsp.servlet.LifeCycleServlet</servlet-class>
+		<init-param>
+			<param-name>path</param-name>
+			<param-value>c:/download</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>lifeCycle</servlet-name>
+		<url-pattern>/life/cycle</url-pattern>
+	</servlet-mapping>
+
+</web-app>
